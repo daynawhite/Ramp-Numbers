@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramp Numbers</title>
-    <script defer src="main.js"></script>
+    <script defer src="main-dom.js"></script>
 </head>
 <body>
     <h1>Ramp Numbers</h1>
     <h2>Enter a number to discover how many ramp numbers are less than your number.</h2>
     <form>
         <label>Number:</label>
-        <input type="number" onkeyup="saveFirstNumber(this.value)">
+        <input id="userInput" type="number">
+        <button id="submitButton" type="submit">submit</button>
     </form>
-    <h2></h2>
+    <br/>
+    <div id="result"></div>
 </body>
 </html>

@@ -1,3 +1,5 @@
+
+
 // convert the number to an array of its digits
 const numArray = (num) => {
     let numberArray = Array.from(num.toString()).map(Number);
@@ -16,14 +18,23 @@ const rampNum = (numArr) => {
 }
 // Overall function that will test each number from 1 to the target number:
 const findAllRampNos = (myNum) => {
+    console.log(this.value)
     let rampNumberCount = 0
-
     for (let n = 1; n <= myNum; n++) {
         let numberArray = numArray(n);
         if (rampNum(numberArray) != false) {
             rampNumberCount++
         }    
     }
-    console.log(`${rampNumberCount} total ramp numbers are less than ${myNum}.`)
-    return rampNumberCount
+    document.getElementById("result").innerHTML = rampNumberCount + " numbers less than " + myNum + " are ramp numbers."
 }
+// get number from user:
+document.getElementById("userInput").addEventListener("keyup",(event) => {
+    userNum = event.target.value
+    console.log(userNum)
+})
+
+submitButton.addEventListener('click',(event)=>{
+    event.preventDefault();
+    findAllRampNos(userNum)
+  })
